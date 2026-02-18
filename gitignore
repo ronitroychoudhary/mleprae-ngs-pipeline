@@ -1,0 +1,70 @@
+# ─── Large data files ────────────────────────────────────────────────────────
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bam.bai
+*.sam
+*.bcf
+*.bcf.csi
+
+# Reference genome and indices (downloaded at runtime)
+index/
+*.fna
+*.fna.fai
+*.fna.gz
+*.dict
+*.bwt
+*.pac
+*.ann
+*.amb
+*.sa
+*.zip
+
+# ─── Pipeline outputs (generated at runtime) ──────────────────────────────────
+fastq/
+results/
+reports/
+tmp/
+logs/
+
+# ─── Pipeline state files ─────────────────────────────────────────────────────
+.pipeline_resume
+*.resume
+
+# ─── VCF / annotation outputs ─────────────────────────────────────────────────
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.vcf.gz.csi
+*.bcf
+*.tsv
+
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv
+env/
+venv/
+
+# ─── OS / editor ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# ─── Conda / package managers ─────────────────────────────────────────────────
+.conda/
+*.egg-info/
+
+# ─── Snakemake / Nextflow (if added later) ────────────────────────────────────
+.snakemake/
+work/
+.nextflow/
+.nextflow.log*

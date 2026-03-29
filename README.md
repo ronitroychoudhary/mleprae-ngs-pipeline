@@ -59,25 +59,25 @@ This pipeline automates the complete workflow for *M. leprae* whole-genome seque
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     INPUT: samples.csv                   │
-│                   (SRA accession IDs)                    │
+│                     INPUT: samples.csv                  │
+│                   (SRA accession IDs)                   │
 └────────────────────────┬────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────┐
-│  SETUP                                                   │
+│  SETUP                                                  │
 │  ├── Download reference genome (GCF_000195855.1)        │
 │  ├── BWA index + samtools faidx                         │
 │  └── Picard CreateSequenceDictionary                    │
 └────────────────────────┬────────────────────────────────┘
                          │
           ┌──────────────┴──────────────┐
-          │   Per-sample processing      │
-          │                              │
-          ▼                              ▼
+          │   Per-sample processing     │
+          │                             │
+          ▼                             ▼
    SINGLE-END                      PAIRED-END
    prefetch + fasterq-dump         prefetch + fasterq-dump
-          │                              │
+          │                             │
           └──────────────┬──────────────┘
                          │
                          ▼
@@ -104,7 +104,7 @@ This pipeline automates the complete workflow for *M. leprae* whole-genome seque
                          │
                          ▼
               ┌──────────────────────┐
-              │  Picard MarkDuplicates│
+              │ Picard MarkDuplicates│
               └──────────┬───────────┘
                          │
                          ▼
@@ -120,8 +120,8 @@ This pipeline automates the complete workflow for *M. leprae* whole-genome seque
               └──────────┬───────────┘
                          │
           ┌──────────────┴──────────────────────────┐
-          │                                          │
-          ▼                                          ▼
+          │                                         │
+          ▼                                         ▼
 ┌─────────────────────┐              ┌───────────────────────────┐
 │  bcftools merge     │              │  MultiQC / Qualimap       │
 │  bcftools norm      │              │  QC reports               │
@@ -132,9 +132,9 @@ This pipeline automates the complete workflow for *M. leprae* whole-genome seque
            ▼
 ┌──────────────────────────────────┐
 │  Drug Resistance Analysis        │
-│  ├── rpoB   → Rifampicin        │
-│  ├── folP1  → Dapsone           │
-│  └── gyrA/B → Fluoroquinolones  │
+│  ├── rpoB   → Rifampicin         │
+│  ├── folP1  → Dapsone            │
+│  └── gyrA/B → Fluoroquinolones   │
 └──────────────────────────────────┘
            │
            ▼

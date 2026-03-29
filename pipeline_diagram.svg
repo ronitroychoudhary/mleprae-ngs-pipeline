@@ -1,0 +1,82 @@
+<svg width="680" viewBox="0 0 680 980" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Input -->
+  <rect x="200" y="40" width="280" height="56" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="340" y="59" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#2C2C2A">Input</text>
+  <text x="340" y="79" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">samples.csv · SRA accession IDs</text>
+
+  <line x1="340" y1="96" x2="340" y2="136" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2. Reference setup -->
+  <rect x="200" y="138" width="280" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="340" y="157" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#04342C">Reference setup</text>
+  <text x="340" y="177" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0F6E56">Download · BWA index · sequence dict</text>
+
+  <line x1="340" y1="194" x2="340" y2="266" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Per-sample loop dashed border -->
+  <rect x="148" y="246" width="384" height="478" rx="10" fill="none" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="6 4"/>
+
+  <!-- Per-sample pill badge -->
+  <rect x="260" y="240" width="160" height="22" rx="11" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="340" y="251" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3C3489">per sample</text>
+
+  <!-- 3. Data acquisition -->
+  <rect x="200" y="268" width="280" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="340" y="287" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#26215C">Data acquisition</text>
+  <text x="340" y="307" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#534AB7">prefetch · fasterq-dump · FastQC raw</text>
+
+  <line x1="340" y1="324" x2="340" y2="364" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4. Quality trimming -->
+  <rect x="200" y="366" width="280" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="340" y="385" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#04342C">Quality trimming</text>
+  <text x="340" y="405" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0F6E56">fastp · Q20 base quality · 50 bp min</text>
+
+  <line x1="340" y1="422" x2="340" y2="462" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 5. Alignment -->
+  <rect x="200" y="464" width="280" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="340" y="483" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#042C53">Alignment</text>
+  <text x="340" y="503" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">BWA-MEM → samtools view → BAM</text>
+
+  <line x1="340" y1="520" x2="340" y2="560" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 6. BAM processing -->
+  <rect x="200" y="562" width="280" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="340" y="581" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#042C53">BAM processing</text>
+  <text x="340" y="601" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">Sort · Picard MarkDuplicates · index</text>
+
+  <line x1="340" y1="618" x2="340" y2="658" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 7. Variant calling -->
+  <rect x="200" y="660" width="280" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="340" y="679" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#4A1B0C">Variant calling</text>
+  <text x="340" y="699" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#993C1D">bcftools mpileup → call → filter</text>
+
+  <line x1="340" y1="716" x2="340" y2="764" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 8. Variant annotation -->
+  <rect x="200" y="766" width="280" height="56" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
+  <text x="340" y="785" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#173404">Variant annotation</text>
+  <text x="340" y="805" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#3B6D11">Merge · normalize · SnpEff · SnpSift</text>
+
+  <!-- Split arrows -->
+  <path d="M340,822 L340,852 L190,852 L190,882" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M340,822 L340,852 L490,852 L490,882" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 9a. Drug resistance -->
+  <rect x="80" y="884" width="220" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="190" y="903" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#412402">Drug resistance</text>
+  <text x="190" y="923" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">rpoB · folP1 · gyrA/gyrB</text>
+
+  <!-- 9b. QC reports -->
+  <rect x="380" y="884" width="220" height="56" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="490" y="903" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#2C2C2A">QC reports</text>
+  <text x="490" y="923" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5F5E5A">MultiQC · Qualimap · FastQC</text>
+</svg>
